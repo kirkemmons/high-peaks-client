@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>High Peaks</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,77 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
+    <body class="border">
+      <h1>High Peaks</h1>
+      <hr>
+
+      <section id="before-sign-in">
+        <!-- sign up form goes here. STEP 1-->
+        <form id="sign-up">
+          <fieldset>
+            <legend>New User Sign-Up</legend>
+      
+            <label>Email:</label>
+            <input type="email" name="credentials[email]" placeholder="Email Address" required>
+      
+            <label>Password:</label>
+            <input type="password" name="credentials[password]" placeholder="Password (case sensitive)" required>
+      
+            <label>Password Confirmation:</label>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+      
+            <button class="btn btn-primary">Sign Up</button>
+          </fieldset>
+        </form>
+        <hr>
+      
+        <form id="sign-in">
+          <fieldset>
+            <legend>User Sign-In</legend>
+      
+            <label>Email:</label>
+            <input type="email" name="credentials[email]" placeholder="Email Address" required>
+      
+            <label>Password:</label>
+            <input type="password" name="credentials[password]" placeholder="Password (case sensitive)" required>
+      
+            <button class="btn btn-dark">Sign In</button>
+          </fieldset>
+        </form>
+        <hr>
+      </section>
+      
+      <section id="after-sign-in">
+      
+        <form id="sign-out">
+          <fieldset>
+      
+      
+            <button class="btn btn-dark">Sign Out</button>
+          </fieldset>
+        </form>
+
+        <form id="change-password">
+          <fieldset>
+            <legend>Change Password</legend>
+          
+            <label>Old Password:</label>
+            <input type="password" name="credentials[old_password]" placeholder="Old Password" required>
+          
+            <label>New Password:</label>
+            <input type="password" name="credentials[new_password]" placeholder="New Password (case sensitive)" required>
+          
+            <button class="btn btn-primary">Change-password</button>
+          </fieldset>
+
+        </form>
+
+      </section>
+
+      <section>
+        <div id="error-message"></div>
+      
+        <div id="success-message"></div>
+      </section>
     </body>
 </html>
