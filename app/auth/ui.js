@@ -8,6 +8,7 @@ const signUpSuccess = function (responseData) {
 
   $('#success-message').removeClass()
   $('#success-message').addClass('text-success')
+  $('#success-message').fadeOut(10000)
 
   $('form').trigger('reset')
 }
@@ -16,7 +17,7 @@ const signInSuccess = function (responseData) {
   store.user = responseData.user
 
   // tell the user it was successful
-  $('#success-message').text('Signed in successfully! Hit New Game!')
+  $('#success-message').text('Signed in successfully!')
 
   $('#success-message').removeClass()
   $('#success-message').addClass('text-success')
@@ -34,6 +35,7 @@ const signOutSuccess = function (responseData) {
 
   $('#success-message').removeClass()
   $('#success-message').addClass('text-success')
+  $('#success-message').fadeOut(10000)
 
   $('form').trigger('reset')
 
@@ -60,6 +62,7 @@ const signUpFailure = function (error) {
 
   $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
+  $('#error-message').fadeOut(10000)
 
   console.log('error is', error)
 }
@@ -68,6 +71,7 @@ const signInFailure = function (error) {
 
   $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
+  $('#error-message').fadeOut(10000)
 
   console.log('error is', error)
 }
@@ -76,6 +80,7 @@ const signOutFailure = function (error) {
 
   $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
+  $('#error-message').fadeOut(10000)
 
   console.log('error is', error)
 }
@@ -84,6 +89,7 @@ const changePasswordFailure = function (error) {
 
   $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
+  $('#error-message').fadeOut(10000)
 
   console.log('error is', error)
 }
