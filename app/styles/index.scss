@@ -1,1 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
+
+:root {
+  --green: #080;
+  --black: #000;
+  --red: #f00;
+}
+
+#after-sign-in {
+  display: none;
+}
+
+.border {
+  border: 3px solid var(--black);
+  margin: 20px;
+  padding: 20px;
+}
+
+.success {
+  color: var(--green);
+}
+
+.failure {
+  color: var(--red);
+}
