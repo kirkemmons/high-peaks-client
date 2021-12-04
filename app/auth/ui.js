@@ -37,6 +37,8 @@ const signOutSuccess = function (responseData) {
   $('#success-message').addClass('text-success')
   $('#success-message').fadeOut(10000)
 
+  $('#peak-display').html('')
+
   $('form').trigger('reset')
 
   $('#after-sign-in').hide()
@@ -53,7 +55,7 @@ const changePasswordSuccess = function (responseData) {
   $('form').trigger('reset')
 
   $('#before-sign-in').hide()
-  // after we sign in, show the section with the id 'after-sign-in' STEP 18
+
   $('#after-sign-in').show()
 }
 

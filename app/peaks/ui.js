@@ -4,6 +4,7 @@ const onCreateSuccess = function (formData) {
   $('#message').text('Peak successfully created')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#message').fadeOut(5000)
 
   const peak = formData.peak
   console.log(formData)
@@ -38,6 +39,7 @@ const onIndexSuccess = function (formData) {
   $('#message').text('All Peaks successfully displayed')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#message').fadeOut(5000)
 
   const peaks = formData.peak
   console.log(formData)
@@ -47,7 +49,6 @@ const onIndexSuccess = function (formData) {
   peaks.forEach(peak => {
     peakHtml += `
     <div>
-    <h6>You Successfully added a peak!</h6>
       <h4>Name: ${peak.name}</h4>
       <p>Elevation: ${peak.elevation}</p>
       <p>Length: ${peak.length}</p>
@@ -74,8 +75,28 @@ const onShowSuccess = function (formData) {
   $('#message').text('One Peak successfully displayed')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#message').fadeOut(5000)
+
+  const peak = formData.peak
+  console.log(formData)
+
+  // create the html to display a single book
+  const peakHtml = `
+    <div>
+      <h4>Name: ${peak.name}</h4>
+      <p>Elevation: ${peak.elevation}</p>
+      <p>Length: ${peak.length}</p>
+      <p>Hike-Time: ${peak.hike_time}</p>
+      <p>Difficulty: ${peak.difficulty}</p>
+    </div>
+  `
+
+  // for the div with the id books-display,
+  // set its html to be our book's html
+  $('#peak-display').html(peakHtml)
 
   $('form').trigger('reset')
+
   console.log('onShowSuccess ran. Data is :', formData)
 }
 
@@ -86,14 +107,15 @@ const onShowFailure = function (error) {
   console.error('onShowFailure ran. Error is :', error)
 }
 
-const onDeleteSuccess = function (formData) {
-  $('#message').text('Peak successfully deleted')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+const onDeleteSuccess = function (title = 'Peak') {
+  $('#peak-display').text(`${title} was deleted successfully`)
+  $('#peak-display').addClass('text-success')
 
-  const peaks = formData.peak
-  const id = peaks.id
-  peaks.findById(id)
+  setTimeout(() => {
+    $('#peak-display').html('')
+
+    $('#peak-display').removeClass('text-success')
+  }, 5000)
 
   $('form').trigger('reset')
   console.log('Peak successfully deleted')
@@ -110,6 +132,17 @@ const onUpdateSuccess = function () {
   $('#message').text('Peak successfully updated')
   $('#message').removeClass()
   $('#message').addClass('success')
+
+  $('#peak-display').text('Peak was updated successfully')
+  $('#peak-display').addClass('text-success')
+
+  // after 5 seconds (5000 milliseconds), run our callback function
+  setTimeout(() => {
+    // remove the message from books-display
+    $('#peak-display').html('')
+    // remove the green color causes by `text-success`
+    $('#peak-display').removeClass('text-success')
+  }, 5000)
 
   $('form').trigger('reset')
   console.log('Peak successfully updated')
