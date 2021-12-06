@@ -13,6 +13,7 @@ const signUp = (formData) => {
     data: formData
   })
 }
+
 const signIn = (formData) => {
   // make a request to post/sign-in
   return $.ajax({
@@ -21,6 +22,7 @@ const signIn = (formData) => {
     data: formData
   })
 }
+
 const signOut = (formData) => {
   // make a request to delete/sign-out
   return $.ajax({
@@ -44,9 +46,23 @@ const changePassword = (formData) => {
   })
 }
 
+const autoSignIn = function (formData) {
+  return $.ajax({
+    url: `${config.apiUrl}/sign-in`,
+    method: 'POST',
+    data: {
+      credentials: {
+        email: formData.credentials.email,
+        password: formData.credentials.password
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  autoSignIn
 }

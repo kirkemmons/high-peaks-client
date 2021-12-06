@@ -13,7 +13,6 @@ const create = function (formData) {
       Authorization: 'Bearer ' + store.user.token
     },
     data: formData
-    // data: data
   })
 }
 
@@ -55,7 +54,6 @@ const update = function (formData) {
       Authorization: 'Bearer ' + store.user.token
     },
     data: formData
-    // data: data
   })
 }
 

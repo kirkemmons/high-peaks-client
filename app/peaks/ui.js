@@ -12,7 +12,6 @@ const onCreateSuccess = function (formData) {
   // create the html to display a single peak
   const peakHtml = `
     <div>
-    <h6>You Successfully added a peak!</h6>
       <h4>Name: ${peak.name}</h4>
       <p>Elevation: ${peak.elevation}</p>
       <p>Length: ${peak.length}</p>
@@ -101,7 +100,7 @@ const onShowSuccess = function (formData) {
 }
 
 const onShowFailure = function (error) {
-  $('#message').text('Error on getting peak')
+  $('#message').text('Error on getting peak. Please enter a valid id')
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('onShowFailure ran. Error is :', error)
@@ -122,7 +121,7 @@ const onDeleteSuccess = function (title = 'Peak') {
 }
 
 const onDeleteFailure = function (error) {
-  $('#message').text('Error on deleting peak')
+  $('#message').text('Error on deleting peak. Please enter a valid id')
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('onDestroyFailure ran. Error is :', error)
@@ -149,7 +148,7 @@ const onUpdateSuccess = function () {
 }
 
 const onUpdateFailure = function (error) {
-  $('#message').text('Error on updating peak')
+  $('#message').text('Error on updating peak. Please try again')
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('onUpdateFailure ran. Error is :', error)
