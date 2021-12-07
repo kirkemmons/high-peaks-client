@@ -1,14 +1,29 @@
 @import '~bootstrap/scss/bootstrap';
 
-body, html{
+body, html {
 	font-family: sans-serif;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 1.7;
 	color: #c4c3ca;
-	background-color: #1f2029;
+  background: linear-gradient(#3f5e5a, #332c23) no-repeat center center fixed !important;
 	overflow-x: hidden;
   height: 100%;
+}
+
+main {
+  text-align: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 :root {
@@ -19,6 +34,19 @@ body, html{
 
 #after-sign-in {
   display: none;
+}
+
+#left-side {
+  float: left;
+}
+
+#right-side {
+  float: right;
+}
+
+.inline-block {
+  display: inline-block;
+  text-align: center;
 }
 
 .hero-image {
@@ -48,7 +76,6 @@ body, html{
 .form-inline {
   display: flex;
   flex-flow: row wrap;
-  flex-wrap: wrap;
   align-items: center;
 }
 

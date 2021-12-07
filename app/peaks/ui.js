@@ -87,6 +87,7 @@ const onShowSuccess = function (formData) {
       <p>Length: ${peak.length}</p>
       <p>Hike-Time: ${peak.hike_time}</p>
       <p>Difficulty: ${peak.difficulty}</p>
+      <p>ID: ${peak._id}</p>
     </div>
   `
 
