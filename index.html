@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>High Peaks</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body class="container-fluid"></body>
+
+      
+      <div class="hero-image">
+        <div class="hero-text">
+          <h1>Adirondack High Peaks</h1>
+        </div>
+      </div>
+
+      <div>
+        <p id="message"></p>
+      </div>
+
+      <div>
+        <p id="peak-display"></p>
+      </div>
+      
+      <div>
+        <div id="error-message"></div>
+      
+        <div id="success-message"></div>
+      </div>
+
+      <main class="text-align">
+
+        <section id="before-sign-in" class="inline-block">
+          <!-- sign up form goes here. STEP 1-->
+          <div id="left-side">
+            <form id="sign-up" class="border form-inline">
+              <fieldset>
+                <legend>Sign-Up</legend>
+          
+                <div>
+                  <label>Email:</label>
+                  <input type="text" name="credentials[email]" placeholder="Email Address" required>
+                </div>
+
+                <div>
+                  <label>Password:</label>
+                  <input type="password" name="credentials[password]" placeholder="Password (case sensitive)" required>
+                </div>
+
+                <div>
+                  <label>Password Confirmation:</label>
+                  <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation (case sensitive)" required>
+                </div>
+          
+                <button class="btn btn-primary">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+
+          <div id="right-side">        
+            <form id="sign-in" class="border form-inline">
+              <fieldset>
+                <legend>Sign-In</legend>
+                
+                <div>
+                <label>Email:</label>
+                <input type="text" name="credentials[email]" placeholder="Email Address" required>
+                </div>
+
+                <div>
+                <label>Password:</label>
+                <input type="password" name="credentials[password]" placeholder="Password (case sensitive)" required>
+                </div>
+          
+                <button class="btn btn-dark">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+        </section>
+
+      </main>
+      
+      <section id="after-sign-in">
+        
+        <div>
+          <form id="peak-create" class="border form-inline">
+            <fieldset>
+              <legend>Add a Peak</legend>
+
+              <div>
+                <label>Peak Name:</label>
+                <input type="text" name="peak[name]" placeholder="Enter Peak Name" required>
+              </div>
+
+              <div>
+                <label>Peak Elevation (ft.):</label>
+                <input type="text" name="peak[elevation]" placeholder="Enter Peak Elevation" required>
+              </div>
+
+              <div>
+                <label>Peak Length (miles):</label>
+                <input type="text" name="peak[length]" placeholder="Enter Peak Length" required>
+              </div>
+
+              <div>
+                <label>Peak Hike Time (hours):</label>
+                <input type="text" name="peak[hike_time]" placeholder="Enter Hike Time" required>
+              </div>
+
+              <div>
+                <label>Peak Difficulty:</label>
+                <input type="number" name="peak[difficulty]" placeholder="Enter Difficulty (1-7)" required>
+              </div>
+
+              <button class="btn btn-success">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div>
+          <form id="peak-index" class="border form-inline">
+            <fieldset>
+              <legend>See all my Peaks</legend>
+
+              <button class="btn btn-warning">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div>
+          <form id="peak-show" class="border form-inline">
+            <fieldset>
+              <legend>Find a Peak</legend>
+
+              <label>Peak ID:</label>
+              <input type="text" name="peak[id]" placeholder="Enter Peak ID" required>
+              <button class="btn btn-warning">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div>
+          <form id="peak-update" class="border form-inline">
+            <fieldset>
+              <legend>Update a Peak</legend>
+              
+              <div>
+                <label>Peak ID:</label>
+                <input type="text" name="peak[id]" placeholder="Enter Peak ID" required>
+              </div>
+
+              <div>
+                <label>Peak Name:</label>
+                <input type="text" name="peak[name]" placeholder="Enter Peak Name" required>
+              </div>
+
+              <div>
+                <label>Peak Elevation (ft.):</label>
+                <input type="text" name="peak[elevation]" placeholder="Enter Peak Elevation" required>
+              </div>
+
+              <div>
+                <label>Peak Length (miles):</label>
+                <input type="text" name="peak[length]" placeholder="Enter Peak Length" required>
+              </div>
+
+              <div>  
+                <label>Peak Hike Time (hours):</label>
+                <input type="text" name="peak[hike_time]" placeholder="Enter Hike Time" required>
+              </div>
+
+              <div>
+                <label>Peak Difficulty:</label>
+                <input type="number" name="peak[difficulty]" placeholder="Enter Difficulty (1-7)" required>
+              </div>
+              
+              <button class="btn btn-success">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div>
+          <form id="peak-delete" class="border form-inline">
+            <fieldset>
+              <legend>Delete a Peak</legend>
+          
+              <label>Peak ID:</label>
+              <input type="text" name="peak[id]" placeholder="Enter Peak ID" required>
+              <button class="btn btn-danger">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div>
+          <form id="change-password" class="border form-inline">
+            <fieldset>
+              <legend>Change Password</legend>
+          
+              <label>Old Password:</label>
+              <input type="password" name="passwords[old]" placeholder="Old Password (case sensitive)" required>
+          
+              <label>New Password:</label>
+              <input type="password" name="passwords[new]" placeholder="New Password (case sensitive)" required>
+          
+              <button class="btn btn-secondary">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div>
+          <form id="sign-out" class="border form-inline">
+            <fieldset>
+              <legend>Log Out</legend>
+          
+              <button class="btn btn-dark">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+      </section>
+
+    </body>
+
+</html>
+      
+
+            
