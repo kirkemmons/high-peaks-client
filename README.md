@@ -2,7 +2,7 @@
 
 This full stack application is designed for users to keep track of each and every Adirondack High Peak they have hiked.
 
-Once a user has signed up and/or signed in, the user can add a peak that they have hiked. The user can also update or delete each park. They can also change password and sign out at the bottom of the page.
+Once a user has signed up and then signed in, the user can add a peak that they have hiked. The user can also update a peak, view all the peaks that they have added and delete a peak. The user also has the option to change password and sign out when they're done.
 
 ## Important Links
 
@@ -27,7 +27,7 @@ Once a user has signed up and/or signed in, the user can add a peak that they ha
 - JavaScript
 - HTML
 - CSS/Bootstrap
-- JSON
+- jQuery
 - Express.js
 - Node.js
 - Mongo DB
@@ -37,7 +37,7 @@ Once a user has signed up and/or signed in, the user can add a peak that they ha
 
 ### Unsolved Problems
 
-Would like to add a profile drop down menu in a navigation bar that includes the change password and sign out option.
+Would like to add a navigation bar at the top of the screeen that includes the change password and sign out option.
 
 ## Images
 
