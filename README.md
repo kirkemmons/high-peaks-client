@@ -1,6 +1,6 @@
 # Application Title: A Description
 
-This full stack application is designed for users to keep track of each and every Adirondack High Peak they have hiked.
+This full stack application is designed for users to keep track of each and every Adirondack High Peak that they have hiked.
 
 Once a user has signed up and then signed in, the user can add a peak that they have hiked. The user can also update a peak, view all the peaks that they have added and delete a peak. The user also has the option to change password and sign out when they're done.
 
