@@ -1,5 +1,7 @@
 'use strict'
 
+const store = require('../store')
+
 const onCreateSuccess = function (formData) {
   $('#message').text('Peak successfully created')
   $('#message').removeClass()
@@ -70,6 +72,46 @@ const onIndexFailure = function (error) {
   console.error('onIndexFailure ran. Error is :', error)
 }
 
+const onUserIndexSuccess = function (responseData) {
+  const peaks = responseData.peaks
+  const user = store.user._id
+  let counter = 1
+  let peaksHtml = ''
+
+  for (let i = 0; i < peaks.length; i++) {
+    if (peaks[i].owner === user) {
+      let peak = []
+      peak = `<div>
+        <h4>ID: ${peaks[i]._id}</h4>
+        <p>Peak: ${counter}</p>
+        <p>Name: ${peaks[i].name}</p>
+        <p>Elevation: ${peaks[i].elevation}</p>
+        <p>Length: ${peaks[i].length}</p>
+        <p>Hike-Time: ${peaks[i].hike_time}</p>
+        <p>Difficulty: ${peaks[i].difficulty}</p>
+      </div>
+      `
+
+      peaksHtml += peak
+      counter++
+    }
+  }
+  $('#peak-display').html(peaksHtml)
+}
+
+const onUserIndexFailure = function (error) {
+  $('#message').text('Failed to find posts!!')
+  $('#message').removeClass()
+  $('#message').addClass('text-danger')
+
+  setTimeout(() => {
+    $('#message').html('')
+    $('#message').removeClass('text-danger')
+  }, 5000)
+
+  console.error(error)
+}
+
 const onShowSuccess = function (formData) {
   $('#message').text('One Peak successfully displayed')
   $('#message').removeClass()
@@ -79,7 +121,7 @@ const onShowSuccess = function (formData) {
   const peak = formData.peak
   console.log(formData)
 
-  // create the html to display a single book
+  // create the html to display a single peak
   const peakHtml = `
     <div>
       <h4>Name: ${peak.name}</h4>
@@ -91,8 +133,8 @@ const onShowSuccess = function (formData) {
     </div>
   `
 
-  // for the div with the id books-display,
-  // set its html to be our book's html
+  // for the div with the id peaks-display,
+  // set its html to be our peak's html
   $('#peak-display').html(peakHtml)
 
   $('form').trigger('reset')
@@ -138,9 +180,9 @@ const onUpdateSuccess = function () {
 
   // after 5 seconds (5000 milliseconds), run our callback function
   setTimeout(() => {
-    // remove the message from books-display
+    // remove the message from peaks-display
     $('#peak-display').html('')
-    // remove the green color causes by `text-success`
+    // remove the green color caused by `text-success`
     $('#peak-display').removeClass('text-success')
   }, 5000)
 
@@ -165,5 +207,7 @@ module.exports = {
   onDeleteSuccess,
   onDeleteFailure,
   onUpdateSuccess,
-  onUpdateFailure
+  onUpdateFailure,
+  onUserIndexSuccess,
+  onUserIndexFailure
 }

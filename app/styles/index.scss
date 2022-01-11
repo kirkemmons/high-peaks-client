@@ -1,5 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
+// * {box-sizing: border-box;}
+
+
 body, html {
 	font-family: sans-serif;
 	font-weight: 300;
@@ -9,6 +12,7 @@ body, html {
   background: linear-gradient(#3f5e5a, #332c23) no-repeat center center fixed !important;
 	overflow-x: hidden;
   height: 100%;
+  // padding-top: 10px;
 }
 
 main {
@@ -54,13 +58,14 @@ input {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Adirondack.jpg");
 
   /* Set a specific height */
-  height: 42%;
+  height: 50%;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
 }
 
 /* Place text in the middle of the image */
@@ -100,9 +105,9 @@ input {
   color: white;
 }
 
-.form-inline button:hover {
-  background-color: orange;
-}
+// .form-inline button:hover {
+//   background-color: orange;
+// }
 
 .border {
   border: 3px solid var(--black);
@@ -117,3 +122,29 @@ input {
 .failure {
   color: var(--red);
 }
+
+.flex-box {
+  justify-content: flex-end;
+}
+ 
+
+/* Position the navbar container inside the image */
+// .container {
+//   position: absolute;
+//   margin: 20px;
+//   width: auto;
+// }
+
+/* The navbar */
+// .topnav {
+//   overflow: hidden;
+//   background-color: #333;
+//   width: 100%;
+//   position: absolute;
+//   top: 0;
+// }
+
+// .navbar-form {
+//     display: flex;
+//     align-items: center;
+// }

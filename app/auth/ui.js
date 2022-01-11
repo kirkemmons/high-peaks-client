@@ -47,7 +47,7 @@ const signOutSuccess = function (responseData) {
 }
 const changePasswordSuccess = function (responseData) {
   $('#success-message').text('Changed Password Successfully!')
-
+  $('#success-message').show()
   $('#success-message').removeClass()
   $('#success-message').addClass('text-success')
   $('#success-message').fadeOut(10000)
